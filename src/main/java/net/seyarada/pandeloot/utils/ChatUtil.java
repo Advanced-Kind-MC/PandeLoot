@@ -29,7 +29,7 @@ public class ChatUtil {
     boolean previousCode = false;
     boolean isBold = false;
     for (char c : message.toCharArray()) {
-      if (c == ') {
+      if (c == ' ') {
         previousCode = true;
       } else if (previousCode) {
         previousCode = false;
@@ -148,7 +148,7 @@ public class ChatUtil {
     PERIOD('.', 1),
     COMMA(',', 1),
     SPACE(' ', 3),
-    BOLD_BAR(', 3),
+    BOLD_BAR(' ', 3),
     DEFAULT('a', 4);
     
     private final char character;
