@@ -27,13 +27,16 @@
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/org/bukkit/bukkit/</url>
         </repository>
 
-        <!-- Oraxen -->
+        <!-- Oraxen and HoloBroadcastAPI -->
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
         </repository>
 
-        <!-- MythicMobs -->
+        <!--
+        MythicMobs, MythicLib, MMOItems and MMOCore
+        (Currently unavailable, you need to download and install the mythic dependencies manually)
+        -->
         <repository>
             <id>zz_lumine-repo</id>
             <url>http://mvn.lumine.io/repository/maven-releases/</url>
@@ -57,6 +60,11 @@
             <url>http://repo.citizensnpcs.co/</url>
         </repository>
 
+        <repository> <!-- adventure api because oraxen needs it I guess -->
+            <id>sonatype-oss-snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </repository>
+
     </repositories>
 
     <dependencies>
@@ -71,25 +79,25 @@
 
         <!-- Oraxen -->
         <dependency>
-            <groupId>com.github.Th0rgal</groupId>
-            <artifactId>Oraxen</artifactId>
-            <version>-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <!-- MythicLib -->
-        <dependency>
-            <groupId>io.lumine.xikage</groupId>
-            <artifactId>MythicMobs</artifactId>
-            <version>4.11.0-BETA</version>
+            <groupId>io.th0rgal</groupId>
+            <artifactId>oraxen</artifactId>
+            <version>1.87.0</version>
             <scope>provided</scope>
         </dependency>
 
         <!-- MythicMobs -->
         <dependency>
+            <groupId>io.lumine.xikage</groupId>
+            <artifactId>MythicMobs</artifactId>
+            <version>4.12.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- MythicLib -->
+        <dependency>
             <groupId>io.lumine</groupId>
             <artifactId>MythicLib</artifactId>
-            <version>1.0.6</version>
+            <version>1.1.2</version>
             <scope>provided</scope>
         </dependency>
 
@@ -97,7 +105,7 @@
         <dependency>
             <groupId>net.Indyuce</groupId>
             <artifactId>MMOItems</artifactId>
-            <version>6.5.4</version>
+            <version>6.6.0</version>
             <scope>provided</scope>
         </dependency>
 
@@ -135,9 +143,9 @@
 
         <!-- HoloBroadcast -->
         <dependency>
-            <groupId>com.github.RomainStorai</groupId>
+            <groupId>com.github.MystiPvP</groupId>
             <artifactId>HolobroadcastAPI</artifactId>
-            <version>v1.10.1</version>
+            <version>-9e71e540c7-1</version>
             <scope>provided</scope>
         </dependency>
 
