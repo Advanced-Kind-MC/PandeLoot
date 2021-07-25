@@ -42,7 +42,7 @@ public class RainbowRunner {
           } else {
             Bukkit.getScheduler().cancelTask(this.id);
           } 
-        }0L, frequency);
+        }, 0L, frequency);
   }
   
   public RainbowRunner(Item item, Player player, double beam) {
@@ -70,6 +70,6 @@ public class RainbowRunner {
           } else {
             Bukkit.getScheduler().cancelTask(this.id);
           } 
-        }0L, frequency);
+        }, 0L, frequency);
   }
 }
