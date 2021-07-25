@@ -8,14 +8,12 @@ import net.seyarada.pandeloot.rewards.Reward;
 import org.bukkit.Bukkit;
 
 public class HolobroadcastMechanic implements MechanicEvent {
-    @Override
-    public void onCall(Reward reward, String value) {
-        if (value!=null && !value.isEmpty() && Bukkit.getServer().getPluginManager().getPlugin("HoloBroadcast")!=null) {
-            StringLib.warn("++++++ Applying holobroadcast effect with value "+value);
-            final HologramPlayersManager manager = HologramPlayersManager.getInstance();
-            final HologramPlayer holoPlayer = manager.getHologramPlayerFromUUID(reward.player.getUniqueId());
-
-            holoPlayer.showHUD(value, -1);
-        }
-    }
+  public void onCall(Reward reward, String value) {
+    if (value != null && !value.isEmpty() && Bukkit.getServer().getPluginManager().getPlugin("HoloBroadcast") != null) {
+      StringLib.warn("++++++ Applying holobroadcast effect with value " + value);
+      HologramPlayersManager manager = HologramPlayersManager.getInstance();
+      HologramPlayer holoPlayer = manager.getHologramPlayerFromUUID(reward.player.getUniqueId());
+      holoPlayer.showHUD(value, -1L);
+    } 
+  }
 }
