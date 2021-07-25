@@ -1,11 +1,12 @@
 package net.seyarada.pandeloot.schedulers;
-import java.util.List;
 import net.seyarada.pandeloot.PandeLoot;
 import net.seyarada.pandeloot.nms.NMSManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
+
+import java.util.List;
 public class HideEntity {
     private int id;
     //private int abandonTime;
@@ -24,3 +25,4 @@ public class HideEntity {
             }
         }, 0, 10);
     }
+}
