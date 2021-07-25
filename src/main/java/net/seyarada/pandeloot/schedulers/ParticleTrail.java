@@ -11,47 +11,33 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
 public class ParticleTrail {
-
-    private int id;
-
-    // This leaves a trail of particles of a specific color behind the item
-
-    public ParticleTrail(Item item, String color, Location location) {
-
-        String fColor = ColorUtil.getColor(item, color);
-        Color rgb = ColorUtil.getRGB(fColor);
-
-        Plugin plugin = PandeLoot.getInstance();
-
-        id = Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, () -> {
-
-            if (!item.isOnGround()&&item.isValid()) {
-                Particle.DustOptions dustOptions = new Particle.DustOptions(rgb, 1);
-                location.getWorld().spawnParticle(Particle.REDSTONE, item.getLocation(), 1, dustOptions);
-            } else {
-                Bukkit.getScheduler().cancelTask(id);
-            }
-
-        }, 0, 1);
-    }
-
-    public ParticleTrail(Item item, String color, Player player) {
-
-        String fColor = ColorUtil.getColor(item, color);
-        Color rgb = ColorUtil.getRGB(fColor);
-
-        Plugin plugin = PandeLoot.getInstance();
-
-        id = Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, () -> {
-
-            if (!item.isOnGround()&&item.isValid()) {
-                Particle.DustOptions dustOptions = new Particle.DustOptions(rgb, 1);
-                player.spawnParticle(Particle.REDSTONE, item.getLocation(), 1, dustOptions);
-            } else {
-                Bukkit.getScheduler().cancelTask(id);
-            }
-
-        }, 0, 1);
-    }
-
+  private int id;
+  
+  public ParticleTrail(Item item, String color, Location location) {
+    String fColor = ColorUtil.getColor(item, color);
+    Color rgb = ColorUtil.getRGB(fColor);
+    PandeLoot pandeLoot = PandeLoot.getInstance();
+    this.id = Bukkit.getScheduler().scheduleSyncRepeatingTask((Plugin)pandeLoot, () -> {
+          if (!item.isOnGround() && item.isValid()) {
+            Particle.DustOptions dustOptions = new Particle.DustOptions(rgb, 1.0F);
+            location.getWorld().spawnParticle(Particle.REDSTONE, item.getLocation(), 1, dustOptions);
+          } else {
+            Bukkit.getScheduler().cancelTask(this.id);
+          } 
+        }0L, 1L);
+  }
+  
+  public ParticleTrail(Item item, String color, Player player) {
+    String fColor = ColorUtil.getColor(item, color);
+    Color rgb = ColorUtil.getRGB(fColor);
+    PandeLoot pandeLoot = PandeLoot.getInstance();
+    this.id = Bukkit.getScheduler().scheduleSyncRepeatingTask((Plugin)pandeLoot, () -> {
+          if (!item.isOnGround() && item.isValid()) {
+            Particle.DustOptions dustOptions = new Particle.DustOptions(rgb, 1.0F);
+            player.spawnParticle(Particle.REDSTONE, item.getLocation(), 1, dustOptions);
+          } else {
+            Bukkit.getScheduler().cancelTask(this.id);
+          } 
+        }0L, 1L);
+  }
 }
