@@ -9,15 +9,12 @@ import net.seyarada.pandeloot.rewards.Reward;
 import org.bukkit.entity.Player;
 
 public class ActionbarMechanic implements MechanicEvent {
-    @Override
-    public void onCall(Reward reward, String value) {
-        if (value != null && !value.isEmpty()) {
-
-            StringLib.warn("++++++ Applying actionBar effect with value "+value);
-            final Player.Spigot spigotPlayer = reward.player.spigot();
-            final BaseComponent[] text = TextComponent.fromLegacyText(value);
-
-            spigotPlayer.sendMessage(ChatMessageType.ACTION_BAR, text);
-        }
-    }
+  public void onCall(Reward reward, String value) {
+    if (value != null && !value.isEmpty()) {
+      StringLib.warn("++++++ Applying actionBar effect with value " + value);
+      Player.Spigot spigotPlayer = reward.player.spigot();
+      BaseComponent[] text = TextComponent.fromLegacyText(value);
+      spigotPlayer.sendMessage(ChatMessageType.ACTION_BAR, text);
+    } 
+  }
 }
