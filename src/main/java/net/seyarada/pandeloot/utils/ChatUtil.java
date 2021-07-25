@@ -1,13 +1,14 @@
 package net.seyarada.pandeloot.utils;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
 import net.seyarada.pandeloot.Config;
 import net.seyarada.pandeloot.damage.DamageUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 
 public class ChatUtil {
 
