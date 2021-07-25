@@ -81,7 +81,7 @@
         <dependency>
             <groupId>io.th0rgal</groupId>
             <artifactId>oraxen</artifactId>
-            <version>1.87.0</version>
+            <version>1.89.0</version>
             <scope>provided</scope>
         </dependency>
 
@@ -167,8 +167,8 @@
 
         <!-- NMS -->
         <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>bukkit-1.13</artifactId>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-1.13</artifactId>
             <version>dev</version>
             <scope>provided</scope>
         </dependency>
