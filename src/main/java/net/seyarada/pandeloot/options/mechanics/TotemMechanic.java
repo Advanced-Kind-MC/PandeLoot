@@ -6,11 +6,10 @@ import net.seyarada.pandeloot.rewards.Reward;
 import org.bukkit.EntityEffect;
 
 public class TotemMechanic implements MechanicEvent {
-    @Override
-    public void onCall(Reward reward, String value) {
-        if (Boolean.parseBoolean(value)) {
-            StringLib.warn("++++++ Applying totem effect with value "+value);
-            reward.player.playEffect(EntityEffect.TOTEM_RESURRECT);
-        }
-    }
+  public void onCall(Reward reward, String value) {
+    if (Boolean.parseBoolean(value)) {
+      StringLib.warn("++++++ Applying totem effect with value " + value);
+      reward.player.playEffect(EntityEffect.TOTEM_RESURRECT);
+    } 
+  }
 }
