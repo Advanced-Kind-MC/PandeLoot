@@ -5,15 +5,13 @@ import net.seyarada.pandeloot.options.MechanicEvent;
 import net.seyarada.pandeloot.rewards.Reward;
 
 public class ExperienceMechanic implements MechanicEvent {
-    @Override
-    public void onCall(Reward reward, String value) {
-        if (value!=null && !value.isEmpty()) {
-            final int experience = Integer.parseInt(value);
-
-            if(experience>0) {
-                StringLib.warn("++++++ Applying experience effect with value "+value);
-                reward.player.giveExp(experience);
-            }
-        }
-    }
+  public void onCall(Reward reward, String value) {
+    if (value != null && !value.isEmpty()) {
+      int experience = Integer.parseInt(value);
+      if (experience > 0) {
+        StringLib.warn("++++++ Applying experience effect with value " + value);
+        reward.player.giveExp(experience);
+      } 
+    } 
+  }
 }
