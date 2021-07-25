@@ -24,7 +24,7 @@ public class ParticleTrail {
           } else {
             Bukkit.getScheduler().cancelTask(this.id);
           } 
-        }0L, 1L);
+        },0L, 1L);
   }
   
   public ParticleTrail(Item item, String color, Player player) {
@@ -38,6 +38,6 @@ public class ParticleTrail {
           } else {
             Bukkit.getScheduler().cancelTask(this.id);
           } 
-        }0L, 1L);
+        },0L, 1L);
   }
 }
