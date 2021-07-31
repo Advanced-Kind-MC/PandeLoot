@@ -1,6 +1,5 @@
 package net.seyarada.pandeloot.utils;
 
-import java.awt.Color;
 import java.util.Random;
 import net.seyarada.pandeloot.schedulers.Beam;
 import net.seyarada.pandeloot.schedulers.ParticleTrail;
@@ -149,33 +148,33 @@ public class ColorUtil {
     return Color.fromRGB(255, 255, 255);
   }
   
-  public static Color getAWTColor(String string) {
+  public static java.awt.Color getAWTColor(String string) {
     switch (string.toLowerCase()) {
       case "blue":
-        return Color.BLUE;
+        return java.awt.Color.BLUE;
       case "cyan":
-        return Color.CYAN;
+        return java.awt.Color.CYAN;
       case "dark_gray":
-        return Color.DARK_GRAY;
+        return java.awt.Color.DARK_GRAY;
       case "gray":
-        return Color.GRAY;
+        return java.awt.Color.GRAY;
       case "green":
-        return Color.GREEN;
+        return java.awt.Color.GREEN;
       case "yellow":
-        return Color.YELLOW;
+        return java.awt.Color.YELLOW;
       case "light_gray":
-        return Color.LIGHT_GRAY;
+        return java.awt.Color.LIGHT_GRAY;
       case "magenta":
-        return Color.MAGENTA;
+        return java.awt.Color.MAGENTA;
       case "orange":
-        return Color.ORANGE;
+        return java.awt.Color.ORANGE;
       case "pink":
-        return Color.PINK;
+        return java.awt.Color.PINK;
       case "red":
-        return Color.RED;
+        return java.awt.Color.RED;
       case "white":
-        return Color.WHITE;
+        return java.awt.Color.WHITE;
     } 
-    return Color.BLACK;
+    return java.awt.Color.BLACK;
   }
 }
