@@ -30,7 +30,7 @@ public class PlaceholderUtil {
         for (int j = 0; j < 3; j++) {
           int k = j + 1;
           if (damageUtil.getRankedPlayers().size() >= k) {
-            i = fastReplace(i, "%" + k + ".name%", damageUtil.getPlayer(j).getName());
+            i = fastReplace(i, "%" + k + ".name%", damageUtil.getOfflinePlayer(j).getName());
             i = fastReplace(i, "%" + k + ".dmg%", String.valueOf(damageUtil.getDamage(j)).replace(".0", ""));
           } else if (i.contains("%" + k + ".name%") || i.contains("%" + k + ".dmg%")) {
             return null;

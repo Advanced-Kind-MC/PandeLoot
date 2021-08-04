@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.UUID;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
@@ -68,9 +69,13 @@ public class DamageUtil {
   public double getPlayerDamage(Player player) {
     return ((Double)this.playerDamage.get(player.getUniqueId())).doubleValue();
   }
-  
+
   public Player getPlayer(int index) {
     return Bukkit.getPlayer(this.player[index]);
+  }
+
+  public OfflinePlayer getOfflinePlayer(int index) {
+    return Bukkit.getOfflinePlayer(this.player[index]);
   }
   
   public double getDamage(int index) {
