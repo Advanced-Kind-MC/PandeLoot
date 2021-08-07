@@ -14,11 +14,14 @@ public class ChatUtil {
 
     public static void announceChatRank(DamageUtil damageUtil) {
         List<Player> dropPlayers = new ArrayList<>();
-        for(UUID playerUUID : damageUtil.getPlayers()) {
-            dropPlayers.add(Bukkit.getPlayer(playerUUID));
+        for (UUID playerUUID : damageUtil.getPlayers()) {
+            final Player player = Bukkit.getPlayer(playerUUID);
+            if (player != null) {
+                dropPlayers.add(player);
+            }
         }
 
-        for(Player player : dropPlayers) {
+        for (Player player : dropPlayers) {
             for (String i : Config.getScoreMessage()) {
                 i = PlaceholderUtil.parse(i, damageUtil, player, false);
                 if (i != null)
@@ -27,20 +30,20 @@ public class ChatUtil {
         }
     }
 
-    public static String getCenteredMessage(String message){
+    public static String getCenteredMessage(String message) {
         message = ChatColor.translateAlternateColorCodes('&', message);
 
         int messagePxSize = 0;
         boolean previousCode = false;
         boolean isBold = false;
 
-        for(char c : message.toCharArray()){
-            if(c == '§'){
+        for (char c : message.toCharArray()) {
+            if (c == '§') {
                 previousCode = true;
-            }else if(previousCode){
+            } else if (previousCode) {
                 previousCode = false;
                 isBold = c == 'l' || c == 'L';
-            }else{
+            } else {
                 DefaultFontInfo dFI = DefaultFontInfo.getDefaultFontInfo(c);
                 messagePxSize += isBold ? dFI.getBoldLength() : dFI.getLength();
                 messagePxSize++;
@@ -52,14 +55,14 @@ public class ChatUtil {
         int spaceLength = DefaultFontInfo.SPACE.getLength() + 1;
         int compensated = 0;
         StringBuilder sb = new StringBuilder();
-        while(compensated < toCompensate){
+        while (compensated < toCompensate) {
             sb.append(" ");
             compensated += spaceLength;
         }
         return sb.toString() + message;
     }
 
-    public enum DefaultFontInfo{
+    public enum DefaultFontInfo {
 
         A('A', 5),
         a('a', 5),
@@ -167,22 +170,22 @@ public class ChatUtil {
             this.length = length;
         }
 
-        public char getCharacter(){
+        public char getCharacter() {
             return this.character;
         }
 
-        public int getLength(){
+        public int getLength() {
             return this.length;
         }
 
-        public int getBoldLength(){
-            if(this == DefaultFontInfo.SPACE) return this.getLength();
+        public int getBoldLength() {
+            if (this == DefaultFontInfo.SPACE) return this.getLength();
             return this.length + 1;
         }
 
-        public static DefaultFontInfo getDefaultFontInfo(char c){
-            for(DefaultFontInfo dFI : DefaultFontInfo.values()){
-                if(dFI.getCharacter() == c) return dFI;
+        public static DefaultFontInfo getDefaultFontInfo(char c) {
+            for (DefaultFontInfo dFI : DefaultFontInfo.values()) {
+                if (dFI.getCharacter() == c) return dFI;
             }
             return DefaultFontInfo.DEFAULT;
         }
