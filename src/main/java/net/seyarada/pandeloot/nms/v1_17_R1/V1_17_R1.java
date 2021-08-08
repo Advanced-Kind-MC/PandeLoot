@@ -129,16 +129,17 @@ public class V1_17_R1 {
                     connection.sendPacket(packetPlayOutSpawnEntity);
                     connection.sendPacket(metadata);
                 }
-
-                new BukkitRunnable() {
-                    @Override
-                    public void run() {
-                        if (player.isOnline()) {
-                            PacketPlayOutEntityDestroy destroy = new PacketPlayOutEntityDestroy(armorStand.getId());
-                            ((CraftPlayer) player).getHandle().b.sendPacket(destroy);
+                if (player != null) {
+                    new BukkitRunnable() {
+                        @Override
+                        public void run() {
+                            if (player.isOnline()) {
+                                PacketPlayOutEntityDestroy destroy = new PacketPlayOutEntityDestroy(armorStand.getId());
+                                ((CraftPlayer) player).getHandle().b.sendPacket(destroy);
+                            }
                         }
-                    }
-                }.runTaskLater(PandeLoot.getInstance(), 300);
+                    }.runTaskLater(PandeLoot.getInstance(), 300);
+                }
             }
 
         }
