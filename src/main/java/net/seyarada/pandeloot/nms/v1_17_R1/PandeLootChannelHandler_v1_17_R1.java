@@ -8,7 +8,6 @@ import net.minecraft.server.level.EntityPlayer;
 import net.seyarada.pandeloot.nms.NMSManager;
 import org.bukkit.entity.Player;
 
-import java.lang.reflect.Field;
 import java.util.List;
 
 public class PandeLootChannelHandler_v1_17_R1 extends ChannelDuplexHandler {
