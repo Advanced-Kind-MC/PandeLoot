@@ -22,7 +22,7 @@ public class PandeLootChannelHandler_v1_17_R1 extends ChannelDuplexHandler {
     public void write(ChannelHandlerContext ctx, Object packet, ChannelPromise promise) throws Exception {
 
         if (packet instanceof PacketPlayOutSpawnEntity) {
-            int id = (int) PacketPlayOutSpawnEntity.a;
+            int id = ((PacketPlayOutSpawnEntity) packet).b();
             if (NMSManager.hideItemFromPlayerMap.containsKey(id)) {
                 List<Player> players = NMSManager.hideItemFromPlayerMap.get(id);
                 if (!players.contains(player.getBukkitEntity())) {

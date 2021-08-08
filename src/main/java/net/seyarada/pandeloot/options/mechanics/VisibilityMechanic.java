@@ -18,14 +18,14 @@ public class VisibilityMechanic implements MechanicEvent {
     if (value.equalsIgnoreCase("player") && reward.player != null) {
       List<Player> players = Collections.singletonList(reward.player);
       hideEntity((Entity)reward.item, players);
-      NMSManager.hideItemFromPlayerMap.put(Integer.valueOf(reward.item.getEntityId()), players);
+      NMSManager.hideItemFromPlayerMap.put(reward.item.getEntityId(), players);
     } else if (value.equalsIgnoreCase("fight")) {
       List<Player> dropPlayers = new ArrayList<>();
       for (UUID playerUUID : reward.damageUtil.getPlayers())
         dropPlayers.add(Bukkit.getPlayer(playerUUID)); 
       if (dropPlayers.size() > 0) {
         hideEntity((Entity)reward.item, dropPlayers);
-        NMSManager.hideItemFromPlayerMap.put(Integer.valueOf(reward.item.getEntityId()), dropPlayers);
+        NMSManager.hideItemFromPlayerMap.put(reward.item.getEntityId(), dropPlayers);
       } 
     } 
   }
