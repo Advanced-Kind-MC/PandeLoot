@@ -13,16 +13,16 @@ import java.util.UUID;
 public class ChatUtil {
 
     public static void announceChatRank(DamageUtil damageUtil) {
-        List<Player> dropPlayers = new ArrayList<>();
+        List<Player> dropPlayers = new ArrayList<>(damageUtil.getPlayers().length);
         for(UUID playerUUID : damageUtil.getPlayers()) {
             dropPlayers.add(Bukkit.getPlayer(playerUUID));
         }
 
         for(Player player : dropPlayers) {
+            if (player == null || !player.isOnline()) continue;
             for (String i : Config.getScoreMessage()) {
                 i = PlaceholderUtil.parse(i, damageUtil, player, false);
-                if (i != null)
-                    player.sendMessage(ChatUtil.getCenteredMessage(i));
+                player.sendMessage(ChatUtil.getCenteredMessage(i));
             }
         }
     }
