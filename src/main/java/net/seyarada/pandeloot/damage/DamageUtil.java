@@ -2,6 +2,7 @@ package net.seyarada.pandeloot.damage;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
@@ -71,6 +72,10 @@ public class DamageUtil {
 
     public Player getPlayer(int index) {
         return Bukkit.getPlayer(player[index]);
+    }
+
+    public OfflinePlayer getOfflinePlayer(int index) {
+        return Bukkit.getOfflinePlayer(this.player[index]);
     }
 
     public double getDamage(int index) {
