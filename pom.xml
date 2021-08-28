@@ -167,8 +167,8 @@
 
         <!-- NMS -->
         <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>bukkit-1.13</artifactId>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-1.13</artifactId>
             <version>dev</version>
             <scope>provided</scope>
         </dependency>
