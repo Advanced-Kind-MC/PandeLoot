@@ -22,7 +22,9 @@ public class ChatUtil {
             if (player == null || !player.isOnline()) continue;
             for (String i : Config.getScoreMessage()) {
                 i = PlaceholderUtil.parse(i, damageUtil, player, false);
-                player.sendMessage(ChatUtil.getCenteredMessage(i));
+                if(i != null) {
+                    player.sendMessage(ChatUtil.getCenteredMessage(i));
+                }
             }
         }
     }
